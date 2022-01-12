@@ -1,5 +1,8 @@
 <template>
   <v-row>
+    <v-col cols="12">
+      <h1>Free Hindi and English songs guitar tabs</h1>
+    </v-col>
     <template v-if="songs">
       <v-col cols="12" sm="6" md="4" v-for="song of songs" :key="song.id">
         <SongItem :song="song" />
@@ -19,7 +22,7 @@ export default {
   name: 'IndexPage',
   head() {
     return {
-      title: 'Home',
+      title: 'Home | Get hindi and english guitar tabs',
       description: 'Ridham Get hindi and english songs guitar tabs and chords',
     }
   },

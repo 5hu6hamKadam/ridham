@@ -1,6 +1,9 @@
 <template>
   <v-row>
     <template v-if="songs.length">
+      <v-col cols="12">
+        <h1 class="text-capitalize">{{ $route.params.type }}</h1>
+      </v-col>
       <v-col cols="12" sm="6" md="4" v-for="song of songs" :key="song.id">
         <SongItem :song="song" />
       </v-col>
@@ -16,10 +19,9 @@ import SongItem from '~/components/SongItem.vue'
 import { getFavorites, isFavorite } from '~/utils/favorites'
 export default {
   components: { SongItem },
-  name: 'IndexPage',
   head() {
     return {
-      title: 'Home',
+      title: 'Get Hindi and English guitar tabs',
       description: 'Ridham Get hindi and english songs guitar tabs and chords',
     }
   },

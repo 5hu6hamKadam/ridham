@@ -75,7 +75,7 @@ export default {
   head() {
     return {
       title: this.song.title,
-      description: this.song.description,
+      description: this.song.title,
     }
   },
   async asyncData({ $content, params }) {
