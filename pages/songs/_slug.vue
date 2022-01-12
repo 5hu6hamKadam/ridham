@@ -1,11 +1,12 @@
 <template>
   <v-row>
-    <v-col cols="12" v-if="song">
+    <v-col cols="12" md="6" order="2"> </v-col>
+    <v-col cols="12" md="6" order="1" v-if="song">
       <v-row>
         <v-col cols="12"
-          ><v-breadcrumbs :items="breadcrumbItems"></v-breadcrumbs
+          ><v-breadcrumbs class="pa-1" :items="breadcrumbItems"></v-breadcrumbs
         ></v-col>
-        <v-col cols="12" md="6">
+        <v-col cols="12" class="pt-0">
           <v-img
             :src="song.src"
             class="white--text align-end"
@@ -14,17 +15,17 @@
           >
           </v-img>
         </v-col>
-        <v-col cols="12">
+        <v-col cols="12" class="py-0">
           <h1 class="text-h4" v-if="song.title">{{ song.title }}</h1>
         </v-col>
-        <v-col cols="12">
+        <v-col cols="12" class="py-0">
           <v-chip-group>
-            <v-chip v-for="tag in song.tags" :key="tag">
+            <v-chip class="text-capitalize" v-for="tag in song.tags" :key="tag">
               {{ tag }}
             </v-chip>
           </v-chip-group>
         </v-col>
-        <v-col cols="12" md="auto">
+        <v-col cols="12" class="py-1">
           <v-simple-table>
             <template v-slot:default>
               <tbody>
@@ -42,16 +43,11 @@
             {{ favorite ? 'Remove from' : 'Add to' }} favorites</v-btn
           >
         </v-col>
-        <v-col class="notes" cols="12" v-html="song.notes"> </v-col>
-        <v-col cols="12" class="pa-0 mt-16">
-          <v-footer v-intersect="onIntersect" class="pb-16">
-            The articles published on this website is just for educational
-            purposes and personal use only. Property and copyrights of songs
-            published on this website are of their respective owners. For
-            Copyright infringement kindly
-            <a class="" href="mailto:1shubhamkadam1@gmail.com">Contact us</a>
-          </v-footer>
+        <v-col cols="12" class="pt-1">
+          <v-divider></v-divider>
         </v-col>
+        <v-col class="notes" cols="12" v-html="song.notes"> </v-col>
+
         <v-btn
           v-if="isIntersecting"
           fab
@@ -66,6 +62,15 @@
       <v-card>
         <v-card-title>No song found</v-card-title>
       </v-card>
+    </v-col>
+    <v-col order="3" cols="12" class="pa-0 mt-16">
+      <v-footer v-intersect="onIntersect" class="pb-16">
+        The articles published on this website is just for educational purposes
+        and personal use only. Property and copyrights of songs published on
+        this website are of their respective owners. For Copyright infringement
+        kindly
+        <a class="" href="mailto:1shubhamkadam1@gmail.com">Contact us</a>
+      </v-footer>
     </v-col>
   </v-row>
 </template>
@@ -135,5 +140,6 @@ export default {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
+  z-index: 200;
 }
 </style>
