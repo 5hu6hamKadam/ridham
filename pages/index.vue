@@ -23,7 +23,13 @@ export default {
   head() {
     return {
       title: 'Home | Get hindi and english guitar tabs',
-      description: 'Ridham Get hindi and english songs guitar tabs and chords',
+      meta: [
+        {
+          name: 'description',
+          content:
+            'Ridham Get free hindi and english songs guitar tabs and chords',
+        },
+      ],
     }
   },
   async asyncData({ $content }) {

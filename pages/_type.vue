@@ -22,7 +22,12 @@ export default {
   head() {
     return {
       title: 'Get Hindi and English guitar tabs',
-      description: 'Ridham Get hindi and english songs guitar tabs and chords',
+      meta: [
+        {
+          name: 'description',
+          content: 'Ridham Get hindi and english songs guitar tabs and chords',
+        },
+      ],
     }
   },
   async asyncData({ $content, params }) {
